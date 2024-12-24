@@ -20,22 +20,17 @@ namespace Student_Grading_System
                 //Create List For Save 5 Subjects
                 List<double> studentGrades = new List<double>();
                 Console.WriteLine("Please Enter your Grades:(5 Subjects)");
-
+             
                 for (int i = 0; i < 5; i++)
                 {
-                    while (true)
+                    try
                     {
-                        Console.Write($"Subjects({i + 1}): ");
-                        try
-                        {
-                            double gradeValue = double.Parse(Console.ReadLine());
-                            studentGrades.Add(gradeValue);
+                        double gradeValue = double.Parse(Console.ReadLine()); 
+                        studentGrades.Add(gradeValue);
                             break; // Exit the loop if parsing is successful
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Please enter a valid number.");
-                        }
+                    }
+                    catch
+                    {
                     }
                 }
 
